@@ -1,4 +1,4 @@
-console.log("listings route working");
+console.log("messages route working");
 
 var express = require('express');
 var router = express.Router();
@@ -23,8 +23,8 @@ router.get('/', function(req, res) {
 router.post('/', function(req, res) {
   console.log('log the data: ', req.body);
   var addMessages = new Messages(req.body);
-  // insert into the listings collection
-  addListings.save(function(err, data) {
+  // insert into the messags collection
+  addMessages.save(function(err, data) {
     console.log('saved data:', data);
     if(err) {
       console.log('save error: ', err);

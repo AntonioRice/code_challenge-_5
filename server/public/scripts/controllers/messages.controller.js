@@ -4,7 +4,7 @@ myApp.controller('MessagesController', ['$http', function($http) {
   var mc = this;
   mc.newMessages = {};
 
-// getMessages(); //will act as a page referesh messages
+getMessages(); //will act as a page refresh messages
 
 //initial function to get all messages
 function getMessages(){
@@ -12,5 +12,14 @@ function getMessages(){
       console.log(response.data);
       mc.messages = response.data;
   });
-
 };
+//need to post/add  new message
+mc.addMessages = function(){
+  $http.post('/messages', mc.newMessages)
+  .then(function(response){
+    console.log('MESSAGE ADDED', response);
+    getMessages(); //refresh
+  });
+} //end of add
+
+}]); //end of controller

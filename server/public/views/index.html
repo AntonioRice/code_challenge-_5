@@ -5,7 +5,7 @@
 <!-- necessities -->
     <script src="vendors/angular.js"></script>
     <script src="vendors/angular-route.js"></script>
-    <script src="scripts/clients.js"></script>
+    <script src="scripts/client.js"></script>
 <!-- styles -->
     <link rel="stylesheet" href="views/style.css">
     <link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.css">
@@ -16,8 +16,32 @@
     <title>Messages App</title>
   </head>
     <header class="text-center">
+        <!-- <header ng-include="'/views/templates/nav.html'"></header> -->
       <h1 class="text">Messages</h1>
   <body class="col-sm-12" ng-app='myApp'>
+<!-- <main ng-view>
+
+</main> -->
+    <div class="col-md-12">
+      <br>
+      <form>
+          <label for="name">Name: </label>
+          <input type="text" ng-model="mc.newMessages.name" id="name" placeholder="name" />
+          <label for="message">Message: </label>
+          <input type="text" ng-model="mc.newMessages.message" id=name placeholder="message"/>
+          <button class="btn btn-primary" ng-click="mc.addMessages()">Add Message</button>
+        </form>
+      <br>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div ng-repeat="item in mc.messages" class="well col-md-3">
+          <p>Name: {{item.name}}</p>
+          <p>Message: {{item.message}}</p>
+        </div>
+      </div>
+    </div>
+
 
     </div>
   </body>

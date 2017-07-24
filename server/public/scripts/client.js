@@ -7,9 +7,9 @@ myApp.config(function($routeProvider) {
     .when('/messages', {
       controller: 'MessagesController',
       controllerAs: 'mc',
-      templateUrl: '/views/templates/messages.html'
+      // templateUrl: '/views/templates/messages.html'
     })
-    // if we don't find the route above, go to the route.
+    // 
     .otherwise({
       redirectTo: '/home',
       templateUrl: '/views/templates/home.html'
