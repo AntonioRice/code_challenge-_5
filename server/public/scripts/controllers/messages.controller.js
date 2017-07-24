@@ -1,11 +1,16 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+myApp.controller('MessagesController', ['$http', function($http) {
+  console.log("Messages Controller loaded");
 
-// create the Schema
-var messagesSchema = new Schema({
-  name: {type: String},
-  message: {type: String}
-});
+  var mc = this;
+  mc.newMessages = {};
 
-// export our model
-module.exports = mongoose.model('Messages', messagesSchema, 'messages');
+// getMessages(); //will act as a page referesh messages
+
+//initial function to get all messages
+function getMessages(){
+  $http.get('/messages').then(function(response){
+      console.log(response.data);
+      mc.messages = response.data;
+  });
+
+};

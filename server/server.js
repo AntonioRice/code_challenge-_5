@@ -5,8 +5,9 @@ var bodyParser = require('body-parser');
 var path = require('path');
 
 var mongoose = require('mongoose');
+
 //routes
-var listings = require('./routes/messages.js');
+var messages = require('./routes/messages.js');
 var index = require('./routes/index.js');
 
 

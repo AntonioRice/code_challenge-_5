@@ -1,0 +1,20 @@
+<div class="col-md-12">
+  <br>
+  <form>
+      <label for="name">Name: </label>
+      <input type="text" ng-model="mc.newMessages.name" id="name" placeholder="name" />
+      <label for="message">Message: </label>
+      <input type="text" ng-model="mc.newMessages.message" id=name placeholder="message"/>
+      <button class="btn btn-primary" ng-click="lc.addListings()">Add Message</button>
+    </form>
+  <br>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div ng-repeat="item in mc.messages" class="well col-md-3">
+      <p>Name: {{item.name}}</p>
+      <p>message: {{item.message}}</p>
+      <!-- <button ng-click="(item._id)" class="btn btn-danger">Delete</button> -->
+    </div>
+  </div>
+</div>
